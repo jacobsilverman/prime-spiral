@@ -30,19 +30,10 @@ const Spiral = () => {
     return newNode;
   }
 
-  function isPrime(value) {
-    if (value===0 || value===1) {
-        return false;
-    }
-    if (value === 2) {
-        return true;
-    }
-    for (let i = 2; i<=Math.ceil(value/2);i++) {
-        if (value%i===0) {
-            return false;
-        }
-    }
-    return true;
+  function isPrime(num) {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false; 
+    return num > 1;
   }
 
   function handleClick() {
@@ -56,7 +47,7 @@ const Spiral = () => {
         c: 0
     };
     let result = {};
-    for (let i =0;i<100000;i++) {
+    for (let i =0;i<1000000;i++) {
         let val = incrementStep(operations);
         if (isPrime(i)) {
             result[i] = val;
