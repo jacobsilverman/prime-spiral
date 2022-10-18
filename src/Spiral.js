@@ -47,7 +47,7 @@ const Spiral = () => {
         c: 0
     };
     let result = {};
-    for (let i =0;i<1000000;i++) {
+    for (let i =0;i<500000;i++) {
         let val = incrementStep(operations);
         if (isPrime(i)) {
             result[i] = val;
